@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
+    <title>Title</title>
+    <style>
+        .off {
+            top: -200%;
+            left: -200%;
+        }
+
+        #menu {
+            position: absolute;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        #menu li:hover {
+            transition: 400ms;
+            background-color: rgb(177, 177, 177);
+            scale: 1.2;
+        }
+
+        #box {
+            width: 70% !important;
+            margin-top: 50px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="display-2 text-center fw-bold">Context_menu_example</h1>
+    <div id="box" class=" p-3 fw-bold border border-4 rounded border-danger lead text-success w-auto">Lorem ipsum
+        dolor sit amet consectetur, adipisicing elit. Praesentium
+        perferendis veritatis ratione facilis consectetur minima sapiente, delectus suscipit ipsa libero nisi,
+        recusandae possimus molestias, quis blanditiis vitae eligendi iusto est.</div>
+
+    <ul id="menu" class="list-inline w-25 border border-1 border-secondary">
+        <li id="red" class="menu-item border border-1 border-secondary">
+            Red
+        </li>
+        <li id="Yellow" class="menu-item border border-1 border-secondary">
+            Yellow
+        </li>
+        <li id="Green" class="menu-item  border border-1 border-secondary">
+            Green
+        </li>
+        <li id="cyan" class="menu-item border border-1 border-secondary">
+            Cyan
+        </li>
+    </ul>
+    <script>
+
+
+        // const paraEve = document.getElementById('para');
+        // paraEve.addEventListener('contextmenu', function (event) {
+        //     event.preventDefault();
+        //     console.log(event);
+        //     console.log('Right Clicked on paragraph');
+        // });
+        // const head1 = document.getElementById('h');
+        // head1.addEventListener('contextMenu', function (event) {
+        //     event.preventDefault();
+        //     console.log(event);
+        //     console.log('Right Clicked on Heading')
+        // })
+
+        let menu = null;
+        document.addEventListener('DOMContentLoaded', function () {
+            menu = document.querySelector('#menu');
+            menu.classList.add('d-none');
+
+            let box = document.getElementById('box');
+            box.addEventListener('contextmenu', showmenu);
+
+            menu.addEventListener('mouseleave', hidemenu);
+
+            addMenuListeners();
+        });
+
+        function addMenuListeners() {
+            document.getElementById('red').addEventListener('click', setColour);
+            document.getElementById('Yellow').addEventListener('click', setColour);
+            document.getElementById('cyan').addEventListener('click', setColour);
+            document.getElementById('Green').addEventListener('click', setColour);
+        }
+
+        function setColour(ev) {
+            hidemenu();
+            let clr = ev.target.id;
+            document.getElementById('box').style.backgroundColor = clr;
+        }
+
+        function showmenu(ev) {
+            ev.preventDefault();
+            console.log(ev)
+            menu.style.top = `${ev.clientY}px`;
+            menu.style.left = `${ev.clientX}px`;
+            menu.classList.remove('d-none');
+        }
+
+        function hidemenu(ev) {
+            menu.classList.add('d-none');
+            menu.style.top = '-200%';
+            menu.style.left = '-200%';
+        }
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>RanQuote</title>
+    <style>
+        .h {
+            height: 450px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-body h">
+                <h2 class="card-title text-center text-danger h1 fw-bold">Random Quote Generator</h2>
+                <p id="num" class="card-text my-5"></p>
+            </div>
+        </div>
+        <div class="card-footer d-inline-block">
+            <button class="btn btn-primary" onclick="generateRanNum()">Get Another Quote</button>
+        </div>
+    </div>
+
+
+    <script>
+        var number = [
+            { num: "1" },
+            { num: "2" },
+            { num: "3" },
+            { num: "4" },
+            { num: "5" },
+            { num: "6" },
+            { num: "7" },
+            { num: "8" },
+            { num: "9" },
+            { num: "10" }
+
+        ];
+
+
+        function generateRanNum(){
+            var randomIndex = Math.floor(Math.random() * number.length);
+            var randomNum = number[randomIndex];
+            document.getElementById("num").innerHTML = "<h1 class ='display-4 fw-bold text-success'>" + randomNum.num + '<br>';
+
+        }
+
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button class="buy">click here1</button>
+    <button class="buy">click here2</button>
+    <button class="buy">click here3</button>
+    <button class="buy">click here4</button>
+    <button class="buy">click here5</button>
+    <button class="buy">click here6</button>
+    <button class="buy">click here7</button>
+    <button class="buy">click here8</button>
+    <button class="buy">click here9</button>
+    <button class="buy">click here10</button>
+
+
+
+    <script>
+       // document.querySelector('.button1').addEventListener('click', function() {
+        //     alert('Hello World!');
+        // });
+
+        function greetings(){
+            alert("enna indha pakam");
+        }
+        const buttons = document.querySelectorAll("button.buy")
+
+        console.log(buttons)
+        buttons.forEach (function(button){
+             button.addEventListener('click',greetings)
+        }
+        )
+    </script>
+</body>
+</html>

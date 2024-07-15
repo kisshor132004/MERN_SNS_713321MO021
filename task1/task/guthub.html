@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .container{
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            border: 1px solid black;
+            margin: 30px;
+            padding: 5px; */
+            
+        /* div{
+            border: 1px black solid;
+            justify-content: center;
+        } */
+        .parent{
+            display: grid;
+            height: 10px;
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-areas: 'header header'
+             'sidebar main'
+             'footer footer';
+
+        }
+        .parent>div{
+            border: 2px solid rgb(30, 29, 29);
+           
+
+        }
+        .header{
+            grid-area: header;
+            
+        }
+        .footer{
+            grid-area: footer;
+        }
+        .main{
+            grid-area: main;
+        }
+        .sidebar{
+            grid-area: sidebar;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div >
+            <h3>Top repositories</h3>
+            <input type="text">
+            <h3>recent activity</h3>
+            <p>When you take actions across GitHub, we’ll provide links to that activity here.</p>
+        </div>
+        <div class="b">
+            <h2>Home</h2>
+            <h3>Updates to your homepage feed</h3>
+            <p>We've combined the power of the Following feed with the For you feed so there’s one place to discover
+                content on GitHub. There’s improved filtering so you can customize your feed exactly how you like it,
+                and a shiny new visual design. <emoj>✨</emoj>
+            </p>
+        </div>
+        <div>
+       hi how are
+    </div> -->
+    <div class="parent">
+        <div class="header"> header</div>
+        <div class="footer"> footer</div>
+        <div class="main"> main</div>
+        <div class="sidebar">sidebar</div>
+        <div class="rsidebar">sidebar</div>
+    </div>   
+</body>
+
+</html>
